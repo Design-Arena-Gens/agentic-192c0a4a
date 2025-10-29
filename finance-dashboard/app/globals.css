@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+:root {
+  --cyan: #00d4ff;
+  --sapphire: #0066ff;
+  --mint: #00ffaa;
+  --silver: #e0e7ef;
+  --dark-bg: #0a0e1a;
+  --card-bg: rgba(15, 23, 42, 0.6);
+}
+
+body {
+  background: linear-gradient(135deg, #0a0e1a 0%, #1a1f3a 100%);
+  color: #e0e7ef;
+  min-height: 100vh;
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.1);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 212, 255, 0.4);
+  box-shadow: 0 12px 48px 0 rgba(0, 212, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.gradient-cyan-mint {
+  background: linear-gradient(135deg, #00d4ff 0%, #00ffaa 100%);
+}
+
+.gradient-sapphire-cyan {
+  background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+}
+
+.gradient-mint-cyan {
+  background: linear-gradient(135deg, #00ffaa 0%, #00d4ff 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #00d4ff 0%, #00ffaa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.floating-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00d4ff 0%, #00ffaa 100%);
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.floating-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 48px rgba(0, 212, 255, 0.6);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.credit-card {
+  background: linear-gradient(135deg, #00d4ff 0%, #00ffaa 100%);
+  border-radius: 20px;
+  padding: 1.5rem;
+  min-width: 300px;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.credit-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+input, textarea {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  color: #e0e7ef;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #00d4ff;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.3);
+}
+
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
